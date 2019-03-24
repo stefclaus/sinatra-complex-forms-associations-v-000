@@ -30,13 +30,14 @@ class OwnersController < ApplicationController
   end
 
   patch '/owners/:id' do
-    ####### bug fix
+    @owner = Owner.find(params[:id])
+
+    ####### the following bug fix is required so that it's possible to remove ALL previous pets from owner.
     if !params[:owner].keys.include?("pet_ids")
     params[:owner]["pet_ids"] = []
     end
-    #######
+    ####### End of fix
 
-    @owner = Owner.find(params[:id])
     @owner.update(params["owner"])
     if !params["pet"]["name"].empty?
       @owner.pets << Pet.create(name: params["pet"]["name"])
