@@ -1,4 +1,4 @@
-<h1>Create a new Pet</h1>
+<h1>Create a new Pet and associate it with an owner </h1>
 
 <form action="/pets" method="POST">
   <label>Create a New Pet:</label>
@@ -9,14 +9,14 @@
   <br>
 <input type="submit" value="Create Pet">
 
-<label>Or, choose an existing owner:</label>
+<label>Who Owns this Pet?:</label>
   <br>
-
+  <br>
   <%@owners.each do |owner|%>
     <input type="checkbox" name="owner[][]" id="<%=owner.id%>" value="<%=owner.id%>"><%=owner.name%></input>
   <%end%>
 
-  <label>Or, create a new owner:</label>
+  <label>Create a New Owner To Go With this Pet:</label>
 
   <label>name:</label>
   <br>
