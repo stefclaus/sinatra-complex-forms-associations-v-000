@@ -7,7 +7,6 @@
     <input  type="text" name="pet[name]" id="pet_name"></input>
 
   <br>
-<input type="submit" value="Create Pet">
 
 <label>Who Owns this Pet?:</label>
   <br>
@@ -16,12 +15,11 @@
     <input type="checkbox" name="owner[][]" id="<%=owner.id%>" value="<%=owner.id%>"><%=owner.name%></input>
   <%end%>
 
-  <label>Create a New Owner To Go With this Pet:</label>
-
-  <label>name:</label>
+  <label>Or just create a new owner to go with this pet:</label>
+  <br>
+  <label>Name:</label>
   <br>
   <input type="text" name="owner[name]" id="owner_name">
+  <input type="submit" value="Create Pet">
   <br>
-  <input type="submit" value="Create Owner">
-
   </form>
